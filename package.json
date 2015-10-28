@@ -4,7 +4,12 @@
   "description": "Super simple message logger for Node.js",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "preinstall": "cp -p ./hooks/pre-commit ./.git/hooks",
+    "lint": "$(npm bin)/eslint index.js lib/*.js",
+    "test": "npm run lint"
+  },
+  "directories": {
+    "lib": "./lib"
   },
   "keywords": [
     "node",
@@ -15,5 +20,14 @@
     "nodemsg"
   ],
   "author": "StefanoMagrassi <stefano.magrassi@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "engines": {
+    "node" : ">=0.12"
+  },
+  "devDependencies": {
+    "eslint": "^1.7.3"
+  },
+  "dependencies": {
+    "chalk": "^1.1.1"
+  }
 }
