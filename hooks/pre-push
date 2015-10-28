@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# Run tests
+npm test
+
+if [ "$?" != 0 ]; then
+  echo "ERROR: Push failed! Check tests report."
+      
+  exit 1 # reject
+fi
+
+echo "SUCCESS: tests passed! Push done."
+
+exit 0
