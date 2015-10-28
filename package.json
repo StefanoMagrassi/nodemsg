@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "preinstall": "cp -p ./hooks/pre-commit ./.git/hooks",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "$(npm bin)/eslint index.js lib/*.js",
+    "test": "npm run lint"
+  },
+  "directories": {
+    "lib": "./lib"
   },
   "keywords": [
     "node",
@@ -17,7 +21,13 @@
   ],
   "author": "StefanoMagrassi <stefano.magrassi@gmail.com>",
   "license": "MIT",
+  "engines": {
+    "node" : ">=0.12"
+  },
   "devDependencies": {
     "eslint": "^1.7.3"
+  },
+  "dependencies": {
+    "chalk": "^1.1.1"
   }
 }
