@@ -52,4 +52,6 @@ In order to ensure consistency when edit/build/publish the module, there are som
 
 Tests are made with fantastic, noiseless, [TAPE](https://github.com/substack/tape) module and rendered piping the stdout into [tape-spec](https://github.com/scottcorgan/tap-spec) module.
 
+This project is developed using [Git flow](http://nvie.com/posts/a-successful-git-branching-model/) model.
+
 Fork the project, edit or use it as you like, make some pull requests to enhance the module: it's nice to be "open".
