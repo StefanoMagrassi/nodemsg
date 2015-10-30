@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "preinstall": "cp -pr ./hooks/* ./.git/hooks",
+    "postinstall": "npm config set tag-version-prefix \"\"",
     "lint": "$(npm bin)/eslint index.js lib/*.js",
     "pretest": "npm run lint",
     "test": "$(npm bin)/tape ./tests/test.*.js | $(npm bin)/tap-spec",
