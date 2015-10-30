@@ -2,6 +2,8 @@
 
 Super simple message logger for Node.js.
 
+[![Build Status](https://travis-ci.org/StefanoMagrassi/nodemsg.svg?branch=master)](https://travis-ci.org/StefanoMagrassi/nodemsg)
+
 ## Usage
 
 Install from npm repository:
