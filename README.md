@@ -47,6 +47,7 @@ In order to ensure consistency when edit/build/publish the module, there are som
 * a `preinstall` npm script copies some `git-hooks` from the `hooks` directory and put them in the project's `.git/hooks` folder:
   - `pre-commit` - runs eslint before commit and stop it if the linter returns error;
   - `pre-push` - runs test before push and stop it if tests return error.
+* a `postinstall` npm script sets npm's `tag-version-prefix` to empty string in order to remove the "v" prefix from tag name when you run `npm version`; 
 * a `pretest` npm script runs eslint before the tests;
 * a `prepublish` npm script runs tests before publishing to npm repository.
 
