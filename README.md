@@ -42,6 +42,24 @@ The methods are all chainable; so you can write the previous line as:
 
 ![nodemsg_chained](https://cloud.githubusercontent.com/assets/1291271/10843812/78b28214-7efb-11e5-91ca-683c37d4d6cd.png)
 
+### Configuration
+
+You can override defaults configuration passing a configuration object to `config()` method before using the module:
+
+    var logger = require('nodemsg');
+    logger.config({ ... }); // Your configuration here
+    
+    ...
+    
+    logger.log('Log stuff with your configuration');
+    logger.info('Configuration also apply on this message');
+
+The `config()` method is a kind of getter/setter factory: if you pass an object as parameter, this will be merged with default; otherwise, if you call the method without parameter it will get the current configuration.
+
+#### Defaults
+
+- **`silent`** (default: **false**): when `true` the it doesn't log anything in the console.
+
 ## Contribution
 
 In order to ensure consistency when edit/build/publish the module, there are some "tricks" which play under the hood:

@@ -7,6 +7,9 @@ var test   = require('tape');
 var logger = require('../index.js');
 
 test('logging messages', function(t) {
+  // Silenced logger: it should avoid false negative test failures
+  logger.config({ silent: true });
+  
   t.ok(logger.log('Simple', 'log', 'message'), 'log -> "Simple log message"');
   t.ok(logger.info('Info', 'message'), 'info -> "message"');
   t.ok(logger.success('Urrah!'), 'success -> "Urrah!"');

@@ -33,3 +33,5 @@ logger.log('Simple', 'log', 'message')
       .warn('Achtung!')
       .error('Oh,', 'no!');
 console.log('\n');
+
+console.log(logger.log('test'));
