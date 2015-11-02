@@ -1,6 +1,6 @@
 {
   "name": "nodemsg",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Super simple message logger for Node.js",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,8 @@
     "pretest": "npm run lint",
     "test": "$(npm bin)/tape ./tests/test.*.js | $(npm bin)/tap-spec",
     "prepublish": "npm test",
-    "showme": "node ./showme.js"
+    "showme": "node ./showme.js",
+    "release": "git push --follow-tags"
   },
   "directories": {
     "lib": "./lib"
