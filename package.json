@@ -9,7 +9,7 @@
     "pretest": "npm run lint",
     "test": "$(npm bin)/tape ./tests/test.*.js | $(npm bin)/tap-spec",
     "prepublish": "npm test",
-    "showme": "node ./show_me.js"
+    "showme": "node ./showme.js"
   },
   "directories": {
     "lib": "./lib"
