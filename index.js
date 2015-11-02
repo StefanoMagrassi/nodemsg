@@ -6,6 +6,29 @@
 
 // Modules
 var render = require('./lib/render.js');
+var extend = require('util')._extend;
+
+/**
+ * @property {object} defaults - Default configurations
+ * @private
+ */
+var configuration = {
+  silent: false
+};
+
+/**
+ * Merge specified configuration with defaults.
+ * @private
+ * @param  {object} opt
+ * @return {object}
+ */
+function config(opt) {
+  if (typeof opt === 'undefined') {
+    return configuration;
+  }
+  
+  return extend(configuration, opt);
+}
 
 /**
  * Calls console.log method in order to log the rendered messages.
@@ -17,6 +40,10 @@ var render = require('./lib/render.js');
 function logger(type, messages) {
   var rendered = render(type, messages);
   var log      = console.log;
+  
+  if (config().silent) {
+    return messages;
+  }
   
   if (typeof console[type] === 'function') {
     log = console[type];
@@ -33,6 +60,14 @@ function logger(type, messages) {
  * @alias nodemsg
  */
 var nodemsg = {
+  
+  /**
+   * Alias to access to private method.
+   * @public
+   * @param  {object} opt
+   * @return {object}
+   */
+  config: config,
   
   /**
    * Logs info message.
@@ -94,7 +129,6 @@ var nodemsg = {
    * @return {object}
    */
   log: function() {
-    // Simple log
     logger('log', arguments);
     
     return this;
