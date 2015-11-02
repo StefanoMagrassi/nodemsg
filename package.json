@@ -8,7 +8,8 @@
     "lint": "$(npm bin)/eslint index.js lib/*.js",
     "pretest": "npm run lint",
     "test": "$(npm bin)/tape ./tests/test.*.js | $(npm bin)/tap-spec",
-    "prepublish": "npm test"
+    "prepublish": "npm test",
+    "showme": "node ./show_me.js"
   },
   "directories": {
     "lib": "./lib"
