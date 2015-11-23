@@ -3,7 +3,7 @@
  * @author StefanoMagrassi <stefano.magrassi@gmail.com>
  */
 
-var logger = require('./index.js');
+var logger = require('../index.js');
 
 // Configuration
 logger.config({ silent: true });
