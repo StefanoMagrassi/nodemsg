@@ -64,9 +64,6 @@ The `config()` method is a kind of getter/setter factory: if you pass an object 
 
 In order to ensure consistency when edit/build/publish the module, there are some "tricks" which play under the hood:
 
-* a `preinstall` npm script copies some `git-hooks` from the `hooks` directory and put them in the project's `.git/hooks` folder:
-  - `pre-commit` - runs eslint before commit and stop it if the linter returns error;
-  - `pre-push` - runs test before push and stop it if tests return error.
 * a `pretest` npm script runs eslint before the tests;
 * a `prepublish` npm script runs tests before publishing to npm repository.
 
