@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint index.js lib/*.js",
     "pretest": "npm run lint",
-    "test": "tape ./tests/test.*.js | tap-spec",
+    "test": "tape ./tests/*.js | tap-spec",
     "prepublish": "npm test",
     "showme": "node ./examples/showme.js",
     "release": "git push --follow-tags"
