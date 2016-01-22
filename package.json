@@ -34,6 +34,7 @@
     "tape": "4.4.0"
   },
   "dependencies": {
-    "chalk": "1.1.1"
+    "chalk": "1.1.1",
+    "nexxa-atoa": "1.0.2"
   }
 }

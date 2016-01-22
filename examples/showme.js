@@ -6,7 +6,7 @@
 var logger = require('../index.js');
 
 // Configuration
-logger.config({ silent: true });
+logger.config({ silent: false });
 
 // Some space before the messages...
 console.log('\n\n');
