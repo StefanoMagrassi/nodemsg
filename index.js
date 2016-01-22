@@ -7,34 +7,10 @@
 // Modules
 // -------
 var render = require('./lib/render.js');
-var extend = require('util')._extend;
-
-// Private properties
-// ------------------
-/**
- * @property {object} defaults - Default configurations
- * @private
- */
-var configuration = {
-  silent: false
-};
+var config = require('./lib/config').factory;
 
 // Private methods
 // ---------------
-/**
- * Merge specified configuration with defaults.
- * @private
- * @param  {object} opt
- * @return {object}
- */
-function config(opt) {
-  if (typeof opt === 'undefined') {
-    return configuration;
-  }
-
-  return extend(configuration, opt);
-}
-
 /**
  * Calls console.log method in order to log the rendered messages.
  * @private
