@@ -12,8 +12,7 @@
     "release": "git push --follow-tags"
   },
   "directories": {
-    "lib": "./lib",
-    "example": "./examples"
+    "lib": "./lib"
   },
   "keywords": [
     "node",
