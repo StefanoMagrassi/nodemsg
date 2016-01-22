@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Super simple message logger for Node.js",
   "main": "index.js",
+  "repository": "StefanoMagrassi/nodemsg",
   "scripts": {
     "lint": "eslint index.js lib/*.js",
     "pretest": "npm run lint",
