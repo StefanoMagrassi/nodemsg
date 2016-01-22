@@ -5,9 +5,12 @@
  */
 
 // Modules
+// -------
 var render = require('./lib/render.js');
 var extend = require('util')._extend;
 
+// Private properties
+// ------------------
 /**
  * @property {object} defaults - Default configurations
  * @private
@@ -16,6 +19,8 @@ var configuration = {
   silent: false
 };
 
+// Private methods
+// ---------------
 /**
  * Merge specified configuration with defaults.
  * @private
@@ -26,7 +31,7 @@ function config(opt) {
   if (typeof opt === 'undefined') {
     return configuration;
   }
-  
+
   return extend(configuration, opt);
 }
 
@@ -40,27 +45,29 @@ function config(opt) {
 function logger(type, messages) {
   var rendered = render(type, messages);
   var log      = console.log;
-  
+
   if (config().silent) {
     return messages;
   }
-  
+
   if (typeof console[type] === 'function') {
     log = console[type];
   }
-  
+
   log.apply(null, rendered);
-  
+
   return messages;
 }
 
+// Public methods
+// --------------
 /**
  * Collects the methods exported.
  * @namespace {object} nodemsg
  * @alias nodemsg
  */
 var nodemsg = {
-  
+
   /**
    * Alias to access to private method.
    * @public
@@ -68,7 +75,7 @@ var nodemsg = {
    * @return {object}
    */
   config: config,
-  
+
   /**
    * Logs info message.
    * @memberof nodemsg
@@ -78,10 +85,10 @@ var nodemsg = {
    */
   info: function() {
     logger('info', arguments);
-    
+
     return this;
   },
-  
+
   /**
    * Logs success message.
    * @memberof nodemsg
@@ -91,10 +98,10 @@ var nodemsg = {
    */
   success: function() {
     logger('success', arguments);
-    
+
     return this;
   },
-  
+
   /**
    * Logs warn message.
    * @memberof nodemsg
@@ -104,10 +111,10 @@ var nodemsg = {
    */
   warn: function() {
     logger('warn', arguments);
-    
+
     return this;
   },
-  
+
   /**
    * Logs error message.
    * @memberof nodemsg
@@ -117,10 +124,10 @@ var nodemsg = {
    */
   error: function() {
     logger('error', arguments);
-    
+
     return this;
   },
-  
+
   /**
    * Logs simple message.
    * @memberof nodemsg
@@ -130,7 +137,7 @@ var nodemsg = {
    */
   log: function() {
     logger('log', arguments);
-    
+
     return this;
   }
 };
