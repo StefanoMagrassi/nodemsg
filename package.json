@@ -29,11 +29,11 @@
     "node": ">=0.12"
   },
   "devDependencies": {
-    "eslint": "^1.7.3",
-    "tap-spec": "^4.1.0",
-    "tape": "^4.2.2"
+    "eslint": "1.10.3",
+    "tap-spec": "4.1.1",
+    "tape": "4.4.0"
   },
   "dependencies": {
-    "chalk": "^1.1.1"
+    "chalk": "1.1.1"
   }
 }
