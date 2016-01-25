@@ -1,6 +1,6 @@
 {
   "name": "nodemsg",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Super simple message logger for Node.js",
   "main": "index.js",
   "repository": "StefanoMagrassi/nodemsg",
