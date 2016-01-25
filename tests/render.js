@@ -14,8 +14,7 @@ test('Renders message with specified type transformation', function(t) {
   var actual  = render(type, [message]);
   var expect  = [styled];
 
-  expect.unshift(styles.render('line', '---\n>'));
-  expect.push('\n');
+  expect.unshift(styles.render(type, '>'));
 
   t.deepEqual(actual, expect, 'should return message as array with specified style');
   t.end();
@@ -28,8 +27,7 @@ test('Renders message without style transformation', function(t) {
   var actual  = render(type, [message]);
   var expect  = [styled];
 
-  expect.unshift(styles.render('line', '---\n>'));
-  expect.push('\n');
+  expect.unshift(styles.render(type, '>'));
 
   t.deepEqual(actual, expect, 'should return message as array without style');
   t.end();

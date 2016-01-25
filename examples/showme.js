@@ -9,10 +9,11 @@ var logger = require('../index.js');
 logger.config({ silent: false });
 
 // Some space before the messages...
-console.log('\n\n');
+console.log('\n');
 
 // Default use
 console.log('Default use'); // Standard console - look at differences
+console.log('---\n');
 logger.log('Simple log message');
 logger.info('Info message');
 logger.success('Urrah!');
@@ -22,11 +23,13 @@ console.log('\n');
 
 // Multiple parameters
 console.log('Multiple parameters');
+console.log('---\n');
 logger.log('I', 'am', 'a', 'simple', 'logger');
 console.log('\n');
 
 // Chained
 console.log('Chained');
+console.log('---\n');
 logger.log('Simple', 'log', 'message')
       .info('Info', 'message')
       .success('Urrah!')
@@ -34,4 +37,4 @@ logger.log('Simple', 'log', 'message')
       .error('Oh,', 'no!');
 console.log('\n');
 
-console.log(logger.log('test'));
+console.log(logger.log('test: logs message and returns nodemsg object'));
