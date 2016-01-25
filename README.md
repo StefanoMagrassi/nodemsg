@@ -13,32 +13,39 @@ Install from npm repository:
 
 Import **nodemsg** module:
 
-    var logger = require('nodemsg'); // name it as you like
-  
+```javascript
+var logger = require('nodemsg'); // name it as you like
+```
 
 Logs whatever you want, with 5 different renderings:
 
-    logger.log('Simple log message');
-    logger.info('Info message');
-    logger.success('Urrah!');
-    logger.warn('Achtung!');
-    logger.error('Oh, no!');
+```javascript
+logger.log('Simple log message');
+logger.info('Info message');
+logger.success('Urrah!');
+logger.warn('Achtung!');
+logger.error('Oh, no!');
+```
 
 ![nodemsg_default_use](https://cloud.githubusercontent.com/assets/1291271/10843816/82ecb34e-7efb-11e5-9bda-d25ce4869ec6.png)
 
 The methods act like `console.log`, so you can pass as many parameters you want:
 
-    logger.log('I', 'am', 'a', 'simple', 'logger');
+```javascript
+logger.log('I', 'am', 'a', 'simple', 'logger');
+```
 
 ![nodemsg_multiple_parameters](https://cloud.githubusercontent.com/assets/1291271/10843818/870648f0-7efb-11e5-8e12-78a57f72262c.png)
 
 The methods are all chainable; so you can write the previous line as:
 
-    logger.log('Simple log message')
-          .info('Info message')
-          .success('Urrah!')
-          .warn('Achtung!')
-          .error('Oh, no!');
+```javascript
+logger.log('Simple log message')
+      .info('Info message')
+      .success('Urrah!')
+      .warn('Achtung!')
+      .error('Oh, no!');
+```
 
 ![nodemsg_chained](https://cloud.githubusercontent.com/assets/1291271/10843812/78b28214-7efb-11e5-91ca-683c37d4d6cd.png)
 
@@ -46,13 +53,15 @@ The methods are all chainable; so you can write the previous line as:
 
 You can override defaults configuration passing a configuration object to `config()` method before using the module:
 
-    var logger = require('nodemsg');
-    logger.config({ ... }); // Your configuration here
-    
-    ...
-    
-    logger.log('Log stuff with your configuration');
-    logger.info('Configuration also apply on this message');
+```javascript
+var logger = require('nodemsg');
+logger.config({ ... }); // Your configuration here
+
+...
+
+logger.log('Log stuff with your configuration');
+logger.info('Configuration also apply on this message');
+```
 
 The `config()` method is a kind of getter/setter factory: if you pass an object as parameter, this will be merged with default; otherwise, if you call the method without parameter it will get the current configuration.
 
