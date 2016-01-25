@@ -1,8 +1,9 @@
 {
   "name": "nodemsg",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Super simple message logger for Node.js",
   "main": "index.js",
+  "repository": "StefanoMagrassi/nodemsg",
   "scripts": {
     "lint": "eslint index.js lib/*.js",
     "pretest": "npm run lint",
@@ -12,8 +13,7 @@
     "release": "git push --follow-tags"
   },
   "directories": {
-    "lib": "./lib",
-    "example": "./examples"
+    "lib": "./lib"
   },
   "keywords": [
     "node",
@@ -29,11 +29,12 @@
     "node": ">=0.12"
   },
   "devDependencies": {
-    "eslint": "^1.7.3",
-    "tap-spec": "^4.1.0",
-    "tape": "^4.2.2"
+    "eslint": "1.10.3",
+    "tap-spec": "4.1.1",
+    "tape": "4.4.0"
   },
   "dependencies": {
-    "chalk": "^1.1.1"
+    "chalk": "1.1.1",
+    "nexxa-atoa": "1.0.2"
   }
 }
