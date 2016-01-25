@@ -6,141 +6,79 @@
 
 // Modules
 // -------
-var render = require('./lib/render.js');
-var extend = require('util')._extend;
-
-// Private properties
-// ------------------
-/**
- * @property {object} defaults - Default configurations
- * @private
- */
-var configuration = {
-  silent: false
-};
-
-// Private methods
-// ---------------
-/**
- * Merge specified configuration with defaults.
- * @private
- * @param  {object} opt
- * @return {object}
- */
-function config(opt) {
-  if (typeof opt === 'undefined') {
-    return configuration;
-  }
-
-  return extend(configuration, opt);
-}
-
-/**
- * Calls console.log method in order to log the rendered messages.
- * @private
- * @param  {string}         type
- * @param  {[object|array]} messages
- * @return {array}
- */
-function logger(type, messages) {
-  var rendered = render(type, messages);
-  var log      = console.log;
-
-  if (config().silent) {
-    return messages;
-  }
-
-  if (typeof console[type] === 'function') {
-    log = console[type];
-  }
-
-  log.apply(null, rendered);
-
-  return messages;
-}
+var config = require('./lib/config').factory;
+var logger = require('./lib/logger');
 
 // Public methods
 // --------------
 /**
- * Collects the methods exported.
- * @namespace {object} nodemsg
- * @alias nodemsg
+* Logs info message.
+* @public
+* @chainable
+* @return {object}
+*/
+function info() {
+  logger('info', arguments);
+
+  return this;
+}
+
+/**
+* Logs success message.
+* @public
+* @chainable
+* @return {object}
+*/
+function success() {
+  logger('success', arguments);
+
+  return this;
+}
+
+/**
+ * Logs warn message.
+ * @public
+ * @chainable
+ * @return {object}
  */
-var nodemsg = {
+function warn() {
+  logger('warn', arguments);
 
-  /**
-   * Alias to access to private method.
-   * @public
-   * @param  {object} opt
-   * @return {object}
-   */
-  config: config,
+  return this;
+}
 
-  /**
-   * Logs info message.
-   * @memberof nodemsg
-   * @public
-   * @chainable
-   * @return {object}
-   */
-  info: function() {
-    logger('info', arguments);
 
-    return this;
-  },
+/**
+* Logs error message.
+* @public
+* @chainable
+* @return {object}
+*/
+function error() {
+  logger('error', arguments);
 
-  /**
-   * Logs success message.
-   * @memberof nodemsg
-   * @public
-   * @chainable
-   * @return {object}
-   */
-  success: function() {
-    logger('success', arguments);
+  return this;
+}
 
-    return this;
-  },
+/**
+* Logs simple message.
+* @public
+* @chainable
+* @return {object}
+*/
+function log() {
+  logger('log', arguments);
 
-  /**
-   * Logs warn message.
-   * @memberof nodemsg
-   * @public
-   * @chainable
-   * @return {object}
-   */
-  warn: function() {
-    logger('warn', arguments);
-
-    return this;
-  },
-
-  /**
-   * Logs error message.
-   * @memberof nodemsg
-   * @public
-   * @chainable
-   * @return {object}
-   */
-  error: function() {
-    logger('error', arguments);
-
-    return this;
-  },
-
-  /**
-   * Logs simple message.
-   * @memberof nodemsg
-   * @public
-   * @chainable
-   * @return {object}
-   */
-  log: function() {
-    logger('log', arguments);
-
-    return this;
-  }
-};
+  return this;
+}
 
 // Exports
-module.exports = nodemsg;
+// -------
+module.exports = {
+  config : config,
+  info   : info,
+  success: success,
+  warn   : warn,
+  error  : error,
+  log    : log
+};

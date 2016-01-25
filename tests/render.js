@@ -7,15 +7,30 @@ var test   = require('tape');
 var styles = require('../lib/styles.js');
 var render = require('../lib/render.js');
 
-test('outputs string with ANSI', function(t) {
-  var rendered = render('info', ['test']);
-  var styled   = styles.render('info', 'test');
-  
-  // Mock
-  var mock     = [styled];
-  mock.unshift(styles.render('line', '---\n>'));
-  mock.push('\n');
-  
-  t.deepEqual(rendered, mock);
+test('Renders message with specified type transformation', function(t) {
+  var type    = 'info';
+  var message = 'test';
+  var styled  = styles.render(type, message);
+  var actual  = render(type, [message]);
+  var expect  = [styled];
+
+  expect.unshift(styles.render('line', '---\n>'));
+  expect.push('\n');
+
+  t.deepEqual(actual, expect, 'should return message as array with specified style');
+  t.end();
+});
+
+test('Renders message without style transformation', function(t) {
+  var type    = 'mytype';
+  var message = 'test';
+  var styled  = styles.render(type, message);
+  var actual  = render(type, [message]);
+  var expect  = [styled];
+
+  expect.unshift(styles.render('line', '---\n>'));
+  expect.push('\n');
+
+  t.deepEqual(actual, expect, 'should return message as array without style');
   t.end();
 });
