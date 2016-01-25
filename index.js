@@ -6,34 +6,8 @@
 
 // Modules
 // -------
-var render = require('./lib/render.js');
 var config = require('./lib/config').factory;
-
-// Private methods
-// ---------------
-/**
- * Calls console.log method in order to log the rendered messages.
- * @private
- * @param  {string}         type
- * @param  {[object|array]} messages
- * @return {array}
- */
-function logger(type, messages) {
-  var rendered = render(type, messages);
-  var log      = console.log;
-
-  if (config().silent) {
-    return messages;
-  }
-
-  if (typeof console[type] === 'function') {
-    log = console[type];
-  }
-
-  log.apply(null, rendered);
-
-  return messages;
-}
+var logger = require('./lib/logger');
 
 // Public methods
 // --------------
