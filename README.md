@@ -67,7 +67,9 @@ The `config()` method is a kind of getter/setter factory: if you pass an object 
 
 #### Defaults
 
-- **`silent`** (default: **false**): when `true` the it doesn't log anything in the console.
+- **`silent`** (default: **false**): when `true` it doesn't log anything in the console;
+- **`before`** (default: **'>'**): string prepended before logged messages;
+- **`after`** (default: **''**): string appended after logged messages.
 
 ## Contribution
 
