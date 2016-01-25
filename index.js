@@ -12,85 +12,73 @@ var logger = require('./lib/logger');
 // Public methods
 // --------------
 /**
- * Collects the methods exported.
- * @namespace {object} nodemsg
- * @alias nodemsg
+* Logs info message.
+* @public
+* @chainable
+* @return {object}
+*/
+function info() {
+  logger('info', arguments);
+
+  return this;
+}
+
+/**
+* Logs success message.
+* @public
+* @chainable
+* @return {object}
+*/
+function success() {
+  logger('success', arguments);
+
+  return this;
+}
+
+/**
+ * Logs warn message.
+ * @public
+ * @chainable
+ * @return {object}
  */
-var nodemsg = {
+function warn() {
+  logger('warn', arguments);
 
-  /**
-   * Alias to access to private method.
-   * @public
-   * @param  {object} opt
-   * @return {object}
-   */
-  config: config,
+  return this;
+}
 
-  /**
-   * Logs info message.
-   * @memberof nodemsg
-   * @public
-   * @chainable
-   * @return {object}
-   */
-  info: function() {
-    logger('info', arguments);
 
-    return this;
-  },
+/**
+* Logs error message.
+* @public
+* @chainable
+* @return {object}
+*/
+function error() {
+  logger('error', arguments);
 
-  /**
-   * Logs success message.
-   * @memberof nodemsg
-   * @public
-   * @chainable
-   * @return {object}
-   */
-  success: function() {
-    logger('success', arguments);
+  return this;
+}
 
-    return this;
-  },
+/**
+* Logs simple message.
+* @public
+* @chainable
+* @return {object}
+*/
+function log() {
+  logger('log', arguments);
 
-  /**
-   * Logs warn message.
-   * @memberof nodemsg
-   * @public
-   * @chainable
-   * @return {object}
-   */
-  warn: function() {
-    logger('warn', arguments);
-
-    return this;
-  },
-
-  /**
-   * Logs error message.
-   * @memberof nodemsg
-   * @public
-   * @chainable
-   * @return {object}
-   */
-  error: function() {
-    logger('error', arguments);
-
-    return this;
-  },
-
-  /**
-   * Logs simple message.
-   * @memberof nodemsg
-   * @public
-   * @chainable
-   * @return {object}
-   */
-  log: function() {
-    logger('log', arguments);
-
-    return this;
-  }
-};
+  return this;
+}
 
 // Exports
-module.exports = nodemsg;
+// -------
+module.exports = {
+  config : config,
+  info   : info,
+  success: success,
+  warn   : warn,
+  error  : error,
+  log    : log
+};
