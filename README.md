@@ -27,15 +27,14 @@ logger.warn('Achtung!');
 logger.error('Oh, no!');
 ```
 
-![nodemsg_default_use](https://cloud.githubusercontent.com/assets/1291271/10843816/82ecb34e-7efb-11e5-9bda-d25ce4869ec6.png)
+![default-use](https://cloud.githubusercontent.com/assets/1291271/12547287/d1c05622-c34f-11e5-88a7-a1b0eeda834f.png)
 
 The methods act like `console.log`, so you can pass as many parameters you want:
 
 ```javascript
 logger.log('I', 'am', 'a', 'simple', 'logger');
 ```
-
-![nodemsg_multiple_parameters](https://cloud.githubusercontent.com/assets/1291271/10843818/870648f0-7efb-11e5-8e12-78a57f72262c.png)
+![multiple-params](https://cloud.githubusercontent.com/assets/1291271/12547292/d5f014d0-c34f-11e5-8444-2a3a051a1e95.png)
 
 The methods are all chainable; so you can write the previous line as:
 
@@ -47,7 +46,7 @@ logger.log('Simple log message')
       .error('Oh, no!');
 ```
 
-![nodemsg_chained](https://cloud.githubusercontent.com/assets/1291271/10843812/78b28214-7efb-11e5-91ca-683c37d4d6cd.png)
+![chained](https://cloud.githubusercontent.com/assets/1291271/12547291/d3fea97a-c34f-11e5-9f51-99655f54790b.png)
 
 ### Configuration
 
