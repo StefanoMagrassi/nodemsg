@@ -5,7 +5,7 @@
 
 var test   = require('tape');
 var chalk  = require('chalk');
-var styles = require('../lib/styles.js');
+var styles = require('../lib/styles');
 
 test('Renders with specified supported type', function(t) {
   var message = 'test';
